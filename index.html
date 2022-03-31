@@ -16,6 +16,9 @@
                 version: 'v13.0'
             });
 
+            let facebookDiv = document.getElementsByClassName("fb-messenger-checkbox")[0];
+        facebookDiv.attributes['user_ref'] = 'setmore_kjjfjdlk332_skjd3243' + new Date().getMilliseconds();
+
             FB.Event.subscribe('messenger_checkbox', function (e) {
                 console.log("messenger_checkbox event");
                 console.log(e);
@@ -32,8 +35,7 @@
             });
         };
 
-        let facebookDiv = document.getElementsByClassName("fb-messenger-checkbox")[0];
-        facebookDiv.attributes['user_ref'] = 'setmore_kjjfjdlk332_skjd3243' +  + new Date().getMilliseconds();
+        
 
     </script>
     <h1>Checkbox Plugin</h1>
