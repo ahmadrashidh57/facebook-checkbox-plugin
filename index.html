@@ -17,6 +17,7 @@
             });
 
             FB.Event.subscribe('messenger_checkbox', function (e) {
+                e.event = 'rendered';
                 console.log("messenger_checkbox event");
                 console.log(e);
                 if (e.event == 'rendered') {
