@@ -1,20 +1,42 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Facebook Checkbox plugin</title>
-    </head>
+
+<head>
+    <title>Facebook Checkbox plugin</title>
+</head>
+
 <body>
     <script>
-        window.fbAsyncInit = function() {
-          FB.init({
-            appId            : '5069878196415663',
-            autoLogAppEvents : true,
-            xfbml            : true,
-            version          : 'v13.0'
-          });
+        window.fbAsyncInit = function () {
+            FB.init({
+                appId: '5069878196415663',
+                autoLogAppEvents: true,
+                xfbml: true,
+                version: 'v13.0'
+            });
         };
-      </script>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+        FB.Event.subscribe('messenger_checkbox', function (e) {
+            console.log("messenger_checkbox event");
+            console.log(e);
+            if (e.event == 'rendered') {
+                console.log("Plugin was rendered");
+            } else if (e.event == 'checkbox') {
+                var checkboxState = e.state;
+                console.log("Checkbox state: " + checkboxState);
+            } else if (e.event == 'not_you') {
+                console.log("User clicked 'not you'");
+            } else if (e.event == 'hidden') {
+                console.log("Plugin was hidden");
+            }
+        });
+    </script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     <h1>Checkbox Plugin</h1>
+    <div class="fb-messenger-checkbox" origin=https://ahmadrashidh57.github.io/facebook-checkbox-plugin/
+        page_id=100303589278342 messenger_app_id=5069878196415663 user_ref="setmore_kjjfjdlk3332_skjd3243_ahmad"
+        allow_login="true" size="medium" skin="light" center_align="true">
+    </div>
 </body>
+
 </html>
