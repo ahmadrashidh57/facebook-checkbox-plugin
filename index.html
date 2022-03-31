@@ -4,6 +4,17 @@
         <title>Facebook Checkbox plugin</title>
     </head>
 <body>
+    <script>
+        window.fbAsyncInit = function() {
+          FB.init({
+            appId            : '5069878196415663',
+            autoLogAppEvents : true,
+            xfbml            : true,
+            version          : 'v13.0'
+          });
+        };
+      </script>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
     <h1>Checkbox Plugin</h1>
 </body>
 </html>
