@@ -16,9 +16,6 @@
                 version: 'v13.0'
             });
 
-            let facebookDiv = document.getElementsByClassName("fb-messenger-checkbox")[0];
-        facebookDiv.attributes['user_ref'] = 'setmore_kjjfjdlk332_skjd3243' + new Date().getMilliseconds();
-
             FB.Event.subscribe('messenger_checkbox', function (e) {
                 console.log("messenger_checkbox event");
                 console.log(e);
@@ -43,6 +40,10 @@
         page_id=109638503006161 messenger_app_id=5069878196415663 user_ref="user_ref"
         allow_login="true" size="medium" skin="light" center_align="true">
     </div>
+    <script>
+        let facebookDiv = document.getElementsByClassName("fb-messenger-checkbox")[0];
+        facebookDiv.attributes['user_ref'] = 'setmore_kjjfjdlk332_skjd3243' + new Date().getMilliseconds();
+    </script>
 </body>
 
 </html>
